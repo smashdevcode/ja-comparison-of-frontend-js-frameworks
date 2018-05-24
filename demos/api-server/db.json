@@ -1,0 +1,46 @@
+{
+  "categories": [
+    "Alternative",
+    "Folk",
+    "Metal",
+    "Rock"
+  ],
+  "albums": [
+    {
+      "id": 1,
+      "title": "Operation: Mindcrime",
+      "artist": "Queensryche",
+      "category": "Metal"
+    },
+    {
+      "id": 2,
+      "title": "Document",
+      "artist": "R.E.M.",
+      "category": "Alternative"
+    },
+    {
+      "id": 3,
+      "title": "Wasting Light",
+      "artist": "Foo Fighters",
+      "category": "Rock"
+    },
+    {
+      "id": 4,
+      "title": "Helplessness Blues",
+      "artist": "Fleet Foxes",
+      "category": "Folk"
+    },
+    {
+      "id": 5,
+      "title": "The Historical Conquests of Josh Ritter",
+      "artist": "Josh Ritter",
+      "category": "Folk"
+    },
+    {
+      "id": 6,
+      "title": "OK Computer OKNOTOK 1997 2017",
+      "artist": "Radiohead",
+      "category": "Alternative"
+    }
+  ]
+}

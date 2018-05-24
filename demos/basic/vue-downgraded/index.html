@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Music Library</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <album v-for="album in albums" 
+      v-bind:album="album" 
+      v-bind:key="album.id"
+      v-on:view-details="handleViewDetails"></album>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  <script>
+
+    Vue.component('album', {
+      props: ['album'],
+      methods: {
+        viewDetails() {
+          this.$emit('view-details', this.album.id);
+        }
+      },
+      template: `
+        <div>
+          <h2>{{ album.title }}</h2>
+          <button v-on:click="viewDetails">View Details</button>
+        </div>
+      `
+    });
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        albums: []
+      },
+      methods: {
+        handleViewDetails(albumId) {
+          alert(`View details! (Album ID: ${albumId})`);
+        }
+      },
+      created() {
+        fetch('http://localhost:3000/albums')
+          .then(response => response.json())
+          .then(data => this.albums = data);
+      }
+    });
+
+  </script>
+</body>
+
+</html>

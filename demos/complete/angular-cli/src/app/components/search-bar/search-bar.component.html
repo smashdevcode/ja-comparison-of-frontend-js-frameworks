@@ -1,0 +1,28 @@
+
+<div>
+  <div class="columns">
+    <div class="column">
+      <input name="searchQuery" type="text"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="search()"
+        class="input is-medium"
+        placeholder="Enter search query..." />
+    </div>
+    <div class="column is-narrow">
+      <div class="select is-medium">
+        <select name="searchCategory" [(ngModel)]="searchCategory">
+          <option value="">Select a category...</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="column is-narrow">
+      <button (click)="search()" class="button is-primary is-medium">Search</button>&nbsp;
+      <button (click)="clearSearch()" class="button is-warning is-medium">Clear</button>
+    </div>
+  </div>
+
+  <div *ngIf="showSearchCriteria && (searchQuery || searchCategory)" class="notification is-info">
+    <span *ngIf="searchQuery">Search Query: {{ searchQuery }}</span><span *ngIf="searchQuery && searchCategory">, </span><span *ngIf="searchCategory">Search Category: {{ searchCategory }}</span>
+  </div>
+</div>

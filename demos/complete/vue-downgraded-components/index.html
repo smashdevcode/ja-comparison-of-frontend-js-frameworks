@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="app" class="section" v-cloak>
+    <div class="container">
+
+      <h1 class="title" v-text="appName" v-once></h1>
+
+      <search-bar 
+        v-bind:categories="categories" 
+        v-on:search="search"
+        v-on:clear-search="clearSearch"></search-bar>
+  
+      <div class="columns is-multiline" v-if="searchResults.length">
+        <album-box 
+          v-for="album in searchResults" 
+          v-bind:album="album" 
+          v-bind:key="album.id"></album-box>
+      </div>
+  
+      <div v-else>
+        <div>Sorry... no results were found that matched your search criteria.</div>
+      </div>
+    
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

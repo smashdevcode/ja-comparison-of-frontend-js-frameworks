@@ -1,0 +1,21 @@
+
+<section class="section">
+  <div class="container">
+
+    <h1 class="title">{{ appName }}</h1>
+
+    <app-search-bar
+      [categories]="categories"
+      (onSearch)="search($event)"
+      (onClearSearch)="clearSearch()"></app-search-bar>
+
+    <div class="columns is-multiline" *ngIf="searchResults.length">
+      <app-album-box class="column is-half" *ngFor="let album of searchResults" [album]="album"></app-album-box>
+    </div>
+
+    <div *ngIf="!searchResults.length">
+      <div>Sorry... no results were found that matched your search criteria.</div>
+    </div>
+
+  </div>
+</section>

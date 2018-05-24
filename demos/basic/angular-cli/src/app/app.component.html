@@ -1,0 +1,5 @@
+<div>
+  <div *ngFor="let album of albums">
+    <app-album [album]="album" (onViewDetails)="handleViewDetails()"></app-album>
+  </div>
+</div>
