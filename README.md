@@ -1,5 +1,7 @@
 
-# A Comparison of Frontend JavaScript Frameworks (React vs Angular vs Vue)
+# A Comparison of Frontend JavaScript Frameworks
+
+## React vs. Angular vs. Vue
 
 ![React vs. Angular vs. Vue](react-angular-vue.png)
 
